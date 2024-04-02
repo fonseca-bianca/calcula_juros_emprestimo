@@ -1,18 +1,28 @@
 package arq.agil.tech.ada.java;
 
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+public class Emprestimo {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double valorEmprestimo;
+        double valorParcela;
+        double juros;
+        double totalApagarComJuros;
+        int quantidadeParcelas;
+
+        System.out.print("Qual o valor do empréstimo? R$");
+        valorEmprestimo = input.nextDouble();
+
+        System.out.print("Em quantas vezes deseja parcelar o empréstimo? ");
+        quantidadeParcelas = input.nextInt();
+
+        juros = (valorEmprestimo * 20) / 100;
+        totalApagarComJuros = valorEmprestimo + juros;
+        valorParcela = totalApagarComJuros / quantidadeParcelas;
+
+        System.out.printf("O valor total do empréstimo com juros é de R$%.2f\n", totalApagarComJuros);
+        System.out.printf("O valor de cada parcela com juros é de R$%.2f\n", valorParcela);
     }
 }
